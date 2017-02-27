@@ -9,7 +9,7 @@ let httpsOptions = {
 
 function getNextMeetup() {
     return fetch('https://' + httpsOptions.hostname + '/' + httpsOptions.path)
-        // .then(response => response.json())
+        .then(response => response.json());
         // .then(nextMeeting => {
         //     var err = false;
         //     if (nextMeeting && nextMeeting.toString().slice(0, 6) !== '<html>') {
@@ -19,17 +19,17 @@ function getNextMeetup() {
         //         setTimeToNewYork(meetingArray);
         //         cache.put('nextMeeting', meetingArray, 3600000);
         //         nextMeeting = '';
-        //         cb(meetingArray[0]);
+        //         resolve(meetingArray[0]);
         //     } else {
         //         let meetingObject2 = {};
         //         meetingObject2.results = [{}];
-        //         cb(meetingObject2.results[0]);
+        //         resolve(meetingObject2.results[0]);
         //     }
         // }).catch(err => { 
         //     console.log('problem with request: ' + e.message);
         //     let meetingObject3 = {};
         //     meetingObject3.results = [{}];
-        //     cb(meetingObject3.results[0]);
+        //     resolve(meetingObject3.results[0]);
         // });
 }
 

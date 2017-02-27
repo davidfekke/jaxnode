@@ -9,7 +9,7 @@ var routes = require('../routes/index');
 var routesForApps = require('../routes/appsroutes');
 
 var twitterdata = require('../fakes/twittererrorfake.js');
-var meetuperrordata = require('../fakes/meetuperrorfake.js');
+var meetuperrordata = require('../fakes/meetuperrorpromisefake.js');
 var githubData = require('../fakes/githuberrorfake.js');
 var servicefactory = require('../services/jaxnode-service.js');
 var service = servicefactory(meetuperrordata, twitterdata);

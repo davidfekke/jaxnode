@@ -3,13 +3,20 @@
 var getTheSponsors = require('../services/sponsordata');
 
 function getNextMeeting(req, res) {
-    req.service.getNextMeetup(function callback(err, results) {
-        if (err) {
-            res.status(500).send({ meeting: 'Error occured' });
-        } else {
+    req.service.getNextMeetup()
+        .then(results => {
             res.send({ meeting: results });
-        }
-    });
+        })
+        .catch(err => {
+            res.status(500).send({ meeting: 'Error occured' });
+        });    
+    // req.service.getNextMeetup(function callback(err, results) {
+    //     if (err) {
+    //         res.status(500).send({ meeting: 'Error occured' });
+    //     } else {
+    //         res.send({ meeting: results });
+    //     }
+    // });
 }
 
 function getSponsors(req, res) {

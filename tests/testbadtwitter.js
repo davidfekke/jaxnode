@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('../routes/index');
 
 var twittererrordata = require('../fakes/twittererrorfake.js');
-var meetupfake = require('../fakes/meetupfake.js');
+var meetupfake = require('../fakes/meetuppromisefake.js');
 var githubData = require('../fakes/githuberrorfake.js');
 var servicefactory = require('../services/jaxnode-service.js');
 var service = servicefactory(meetupfake, twittererrordata);

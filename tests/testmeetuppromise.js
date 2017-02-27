@@ -6,8 +6,14 @@ let assert = chai.assert;
 describe('Promise Services', function () {
     describe('GET Meetup', function () {
         it('Grab meetup data', function getMeetup(done) {
-            meetupdata();
-            done();
+            const jsonPromise = meetupdata();
+            jsonPromise
+                .then(result => {
+                    done();
+                })
+                .catch(w => {
+                    done();
+                });
         });
     });
 });

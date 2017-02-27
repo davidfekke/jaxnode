@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 var twitterdata = require('./services/twitterdata.js');
-var meetupdata = require('./services/meetupdata.js');
+var meetupdata = require('./services/meetuppromise.js');
 var githubData = require('./services/githubdata.js');
 var path = require('path');
 var logger = require('morgan');
