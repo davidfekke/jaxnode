@@ -125,11 +125,20 @@ async function getNextMeetupV5() {
         return meetingCache;
     } else {
         const response = await axios.get('https://api.meetup.com/Jax-Node-js-UG/events?page=2');
-        const meeting = response.data[0];
+        if (response.data[0] === undefined) {
+            const local_meeting = nextmeeting[0];
+
+            setTimeToNewYork(local_meeting);
+            cache.put('nextMeeting', local_meeting, 3600000);
+            return local_meeting;
+        } else {
+            const meeting = response.data[0];
         
-        setTimeToNewYork(meeting);
-        cache.put('nextMeeting', meeting, 3600000);
-        return meeting;
+            setTimeToNewYork(meeting);
+            cache.put('nextMeeting', meeting, 3600000);
+            return meeting;
+        }
+        
     }
     
     //return nextmeeting[0];
