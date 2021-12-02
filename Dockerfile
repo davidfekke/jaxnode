@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:14.17.3
+FROM mhart/alpine-node:16.4.2
 
 RUN npm install -g yarn
 
@@ -9,5 +9,5 @@ WORKDIR /src
 RUN yarn
 
 # Add your source files
-COPY . /src  
+COPY . /src
 CMD ["npm","start"]
