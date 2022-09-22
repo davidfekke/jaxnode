@@ -20,7 +20,7 @@ jobs:
       - run: npm test
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          dontuseforce: 0
+          dontuseforce: 1
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "jaxnode" 
           heroku_email: "david@fekke.com"
