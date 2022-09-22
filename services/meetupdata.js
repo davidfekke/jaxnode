@@ -120,10 +120,10 @@ async function getNextMeetupV4() {
 
 
 async function getNextMeetupV5() {
-    const meetingCache = cache.get('nextMeeting');
-    if (meetingCache) {
-        return meetingCache;
-    } else {
+    // const meetingCache = cache.get('nextMeeting');
+    // if (meetingCache) {
+    //     return meetingCache;
+    // } else {
         const response = await axios.get('https://api.meetup.com/Jax-Node-js-UG/events?page=2');
         if (response.data[0] === undefined) {
             const local_meeting = nextmeeting[0];
@@ -139,7 +139,7 @@ async function getNextMeetupV5() {
             return meeting;
         }
         
-    }
+    //}
     
     //return nextmeeting[0];
 }

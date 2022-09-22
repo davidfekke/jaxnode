@@ -1,18 +1,21 @@
 'use strict';
 
-var cache = require('memory-cache');
-var twitter = require('twitter');
+require('dotenv').config()
+const cache = require('memory-cache');
+const twitter = require('twitter');
 
 /*
  * Set up options for the Twitter API.
  */
 /*eslint-disable */
-var twit = new twitter({
+const twitterprefs = {
     consumer_key: process.env.twitter_ck,
     consumer_secret: process.env.twitter_cs,
     access_token_key: process.env.twitter_atk,
     access_token_secret: process.env.twitter_ats
-});
+};
+
+const twit = new twitter(twitterprefs);
 /*eslint-enable */
 
 /*
@@ -25,6 +28,7 @@ function formatTweets(item) {
 }
 
 async function getFeed() {
+    console.log(twitterprefs);
     var cTweets = cache.get('Tweets');
     if (cTweets !== null) {
         return { tweets: cTweets };
