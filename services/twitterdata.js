@@ -28,7 +28,6 @@ function formatTweets(item) {
 }
 
 async function getFeed() {
-    console.log(twitterprefs);
     var cTweets = cache.get('Tweets');
     if (cTweets !== null) {
         return { tweets: cTweets };
