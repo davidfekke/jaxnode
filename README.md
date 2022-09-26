@@ -22,6 +22,6 @@ They are as follows;
 
 Upgraded to Node.js v16.4.2. Version 3.0 of this code requires Node.js 8.6 or higher because of the use of async/await.
 
-Copyright 2021 David Fekke
+Copyright 2022 David Fekke
 
 
