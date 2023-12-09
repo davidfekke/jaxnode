@@ -1,13 +1,13 @@
 [
     {
         "id": "277961668",
-        "name": "Node.js version 16",
-        "time": "Thursday, April 15, 2021",
-        "event_url": "https://www.meetup.com/Jax-Node-js-UG/events/277961668/",
-        "description": "David Fekke will be presenting on Node.js v16, the latest version of Node.js. This presentation will cover modern JavaScript, and how we should use the language going forward using some of the newer features and best practices.",
+        "name": "BUN 1.0",
+        "time": "Wednesday, January 17, 2024",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/297380440/",
+        "description": "Bun 1.0 is a new, fast JavaScript runtime, similar to Node.js and Deno, but with several distinct features and improvements. It's designed to provide a highly efficient and modern environment for running JavaScript, TypeScript, and WebAssembly.",
         "venue": {
-                "name": "Online",
-                "address_1": "Details on meetup.com",
+                "name": "Availity",
+                "address_1": "5555 Gate Pkwy #110",
                 "city": "Jacksonville",
                 "state": "Fl",
                 "zip": "32256",

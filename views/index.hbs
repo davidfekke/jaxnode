@@ -100,20 +100,23 @@
     
 </div>
 <div class="col-md-4">
-    {{#if displayTweets}}
-    <ul class="list-group">
+    {{!-- {{#if displayTweets}} --}}
+    <a class="twitter-timeline" href="https://twitter.com/jaxnode?ref_src=twsrc%5Etfw">Tweets by jaxnode</a> 
+    
+    {{!-- <ul class="list-group">
         <li class="list-group-item">
             <img src="/images/Twitter_logo_white_sm.png">
             <a href="https://twitter.com/jaxnode" alt="JaxNode on Twitter">@Jaxnode</a> on Twitter</li>
             {{#each tweets}}
             <li class="list-group-item"><span class="list-group-item-text">{{{this.text}}}</span></li>
             {{/each}}
-    </ul>
-    {{/if}}
+    </ul> --}}
+    {{!-- {{/if}} --}}
 </div>
 
 {{#contentFor "pageScripts"}}
   {{#if displayMeetup}}
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBV9EuRsK_Eg7rzF-zA4ARVrNyPsfKOV_s&sensor=false'></script>
   <script type="text/javascript">
     {{#if displayMap}}
