@@ -11,16 +11,7 @@ This is the source code for the JaxNode website.
 
 The website can be viewed at [https://www.jaxnode.com](https://www.jaxnode.com).
 
-There are five environment variables that need to be set up in order to use the feed and the twitter.
-They are as follows;
+Upgraded to Node.js v20.10.0. Version 3.0 of this code requires Node.js 8.6 or higher because of the use of async/await.
 
-* process.env.meetupapi_key = Meetup API Key
-* process.env.twitter_ck = Twitter consumer_key
-* process.env.twitter_cs = Twitter consumer_secret
-* process.env.twitter_atk = Twitter access_token_key
-* process.env.twitter_ats = Twitter access_token_secret
-
-Upgraded to Node.js v16.4.2. Version 3.0 of this code requires Node.js 8.6 or higher because of the use of async/await.
-
-Copyright 2022 David Fekke
+Copyright 2023 David Fekke
 

@@ -1,4 +1,4 @@
-FROM node:16.17.0-alpine3.15
+FROM node:20.10.0-alpine3.15
 
 RUN mkdir /src
 
