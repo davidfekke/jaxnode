@@ -4,8 +4,8 @@
   "private": true,
   "main": "./bin/www",
   "scripts": {
-    "start": "bun run ./bin/www",
-    "dev": "bun run ./bin/www -w",
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
     "test": "jest"
   },
   "dependencies": {
