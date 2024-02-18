@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "async": "^1.5.1",
-    "axios": "^0.27.2",
+    "axios": "^1.6.7",
     "body-parser": "^1.18.3",
     "cookie-parser": "~1.4.1",
     "debug": "~2.6.9",
@@ -22,7 +22,7 @@
     "morgan": "^1.9.1",
     "node-fetch": "^2.6.1",
     "serve-favicon": "^2.5.0",
-    "twitter": "^1.7.1"
+    "twitter": "^1.1.0"
   },
   "devDependencies": {
     "chai": "^3.4.1",
