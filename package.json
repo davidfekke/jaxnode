@@ -4,11 +4,12 @@
   "private": true,
   "main": "./bin/www",
   "scripts": {
-    "start": "bun run ./bin/www",
-    "dev": "bun run ./bin/www -w",
+    "start": "node ./bin/www",
+    "dev": "node ./bin/www -w",
     "test": "jest"
   },
   "dependencies": {
+    "@mux/mux-player": "^2.8.0",
     "async": "^1.5.1",
     "axios": "^0.27.2",
     "body-parser": "^1.18.3",

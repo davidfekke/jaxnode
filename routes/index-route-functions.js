@@ -79,6 +79,10 @@ exports.tempindex = async function tempindex(req, res) {
   res.render('tempindex');  
 };
 
+exports.video = async function video(req, res) {
+    res.render('video', { title: 'JaxNode Videos' });
+};
+
 function nameCompare(a, b) {
     const nameA = a.name.toLowerCase();
     const nameB = b.name.toLowerCase();
