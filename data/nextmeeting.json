@@ -1,10 +1,10 @@
 [
     {
         "id": "277961668",
-        "name": "Langchain JavaScript",
-        "time": "Wednesday, February 21, 2024",
-        "event_url": "https://www.meetup.com/jax-node-js-ug/events/297380440/",
-        "description": "February's JaxNode meetup will cover how to build AI apps with Node.js and Langchain. Langchain is a popular framework for building AI apps for large language models like OpenAI's GPT, but it can be used with others including open source alternatives. This presentation will cover vector databases, embeddings and using your data and functions to build state of the art AI apps.",
+        "name": "Upgrade your React SPA app to Next.js",
+        "time": "Wednesday, July 17, 2024",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/301732532/",
+        "description": "July's presentation will cover how to upgrade a React app to Next.js. We will be using a video app using Mux for the demo. Join us at our next JaxNode event where we will explore the latest advancements in JavaScript frameworks. Dive deep into how frameworks like React, Angular, and Vue can revolutionize your web development projects. Our expert speakers will guide you through best practices in utilizing these powerful tools to enhance user experiences and streamline development processes. Whether you are a seasoned developer or just starting out, this event is a great opportunity to expand your knowledge and network with like-minded individuals. Don't miss out on this engaging session that promises to inspire and empower you in the world of JavaScript frameworks.",
         "venue": {
                 "name": "Availity",
                 "address_1": "5555 Gate Pkwy #110",
