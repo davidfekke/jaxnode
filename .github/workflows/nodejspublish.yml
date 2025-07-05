@@ -13,14 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - run: npm ci
       - run: npm test
-      - uses: akhileshns/heroku-deploy@v3.12.14 # This is the action
+      - name: Install Heroku CLI # <- IMPORTANT!!! Make sure the cli is installed before using the action
+        run: |
+          curl https://cli-assets.heroku.com/install.sh | sh
+      - uses: akhileshns/heroku-deploy@v3.14.15 # This is the action
         with:
           dontuseforce: 1
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "jaxnode" 
+          heroku_app_name: "jaxnode"
           heroku_email: "david@fekke.com"
