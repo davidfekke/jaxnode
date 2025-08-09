@@ -6,7 +6,6 @@ const githubData = require('./services/githubdata.js');
 const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const servicefactory = require('./services/jaxnode-service.js');
 
 const service = servicefactory(meetupdata, twitterdata);
@@ -27,8 +26,8 @@ app.set('view engine', 'hbs');
 app.set('views', __dirname + '/views');
 
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -52,7 +51,7 @@ app.use(function (req, res) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function (err, req, res) {
+    app.use(function (err, req, res, next) {
         res.status(err.status || 500);
         console.log(err.message);
         res.render('error', {
@@ -64,7 +63,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function (err, req, res) {
+app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     console.log(err.message);
     res.render('error', {
