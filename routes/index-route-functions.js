@@ -6,7 +6,7 @@
 exports.index = async function index(req, res) {
     try {
         const meetingArray = await req.service.getNextMeetup();
-        const tweetResults = await req.service.getTweets();
+        const tweetResults = { tweets: [] } // await req.service.getTweets();
         const displayMeetup = meetingArray !== undefined && Object.keys(meetingArray).length !== 0;
         if (displayMeetup && meetingArray.hasOwnProperty('venue')) {
             var displayMap = Object.keys(meetingArray.venue).length !== 0;
@@ -77,6 +77,10 @@ exports.api = async function api(req, res) {
 
 exports.tempindex = async function tempindex(req, res) {
   res.render('tempindex');  
+};
+
+exports.video = async function video(req, res) {
+    res.render('video', { title: 'JaxNode Videos' });
 };
 
 function nameCompare(a, b) {
