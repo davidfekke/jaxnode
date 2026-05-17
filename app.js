@@ -1,6 +1,6 @@
 'use strict';
 const express = require('express');
-const twitterdata = require('./services/twitterdata.js');
+// const twitterdata = require('./services/twitterdata.js');
 const meetupdata = require('./services/meetupdata.js');
 const githubData = require('./services/githubdata.js');
 const path = require('path');
@@ -8,7 +8,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const servicefactory = require('./services/jaxnode-service.js');
 
-const service = servicefactory(meetupdata, twitterdata);
+const service = servicefactory(meetupdata);
 
 const routes = require('./routes/index');
 const routesForApps = require('./routes/appsroutes');

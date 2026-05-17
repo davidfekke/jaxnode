@@ -1,9 +1,8 @@
 'use strict';
 
-function Service(meetupdata, twitterdata) {
+function Service(meetupdata) {
     return {
-        getNextMeetup: meetupdata,
-        getTweets: twitterdata
+        getNextMeetup: meetupdata
     };
 }
 
