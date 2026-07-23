@@ -1,9 +1,9 @@
 [
     {
         "id": "314519802",
-        "name": "AI Agent Skills",
-        "time": "Wednesday, May 21, 2026",
-        "event_url": "https://www.meetup.com/jax-node-js-ug/events/314519802/",
-        "description": "Agent Skills are a lightweight, open format for extending AI agent capabilities with specialized knowledge and workflows. At this next JaxNode meeting we will be discussing how you can add AI Agent skills to your agents and AI applications."
+        "name": "JaxNode July Meetup: Vue.js, Nuxt, Vite and Micro Frontends",
+        "time": "Wednesday, July 23, 2026",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/315489003/",
+        "description": "We will be presenting on Vue.js, Nuxt and Vite in July's meeting. Vue.js is a frontend framework for adding dynamic UIs to static web pages. We will also cover Nuxt and Vite as well since Nuxt is the server side version of Vue. Vue components can also be used in micro-frontends, so we will laos be covering how to use Vue using module federation. We will also be providing food for this meeting."
     }
 ]
