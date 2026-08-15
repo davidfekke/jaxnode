@@ -1,9 +1,9 @@
 [
     {
-        "id": "314519802",
-        "name": "JaxNode July Meetup: Vue.js, Nuxt, Vite and Micro Frontends",
-        "time": "Wednesday, July 23, 2026",
-        "event_url": "https://www.meetup.com/jax-node-js-ug/events/315489003/",
-        "description": "We will be presenting on Vue.js, Nuxt and Vite in July's meeting. Vue.js is a frontend framework for adding dynamic UIs to static web pages. We will also cover Nuxt and Vite as well since Nuxt is the server side version of Vue. Vue components can also be used in micro-frontends, so we will laos be covering how to use Vue using module federation. We will also be providing food for this meeting."
+        "id": "316034901",
+        "name": "Why to choose Ember.js in 2026",
+        "time": "Thursday, August 27, 2026",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/316034901/",
+        "description": "Ember.js is an older JavaScript web framework, started in 2011 by Ruby on Rails core contributors.\n\nIt saw most adoption during the 2010s. Pre-dating React"
     }
 ]
