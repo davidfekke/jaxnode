@@ -1,9 +1,9 @@
 [
     {
-        "id": "316034901",
-        "name": "Why to choose Ember.js in 2026",
-        "time": "Thursday, August 27, 2026",
-        "event_url": "https://www.meetup.com/jax-node-js-ug/events/316034901/",
-        "description": "Ember.js is an older JavaScript web framework, started in 2011 by Ruby on Rails core contributors.\n\nIt saw most adoption during the 2010s. Pre-dating React"
+        "id": "316384558",
+        "name": "MLX-Serve",
+        "time": "Thursday, September 24, 2026",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/316384558/",
+        "description": "David Dalcu will be presenting on an extremely cool Open Source project he started called MLX-Serve. MLX-Serve is software you can use to run LLMs on your "
     }
 ]
