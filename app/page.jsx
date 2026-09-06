@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import { getNextMeetup } from '../lib/meetupdata';
 
 export const metadata = {
@@ -14,7 +15,7 @@ export default async function Home() {
 
   let mapsScript = '';
   if (displayMap) {
-    mapsScript = `function initialize() {\n  var myLatlng = new google.maps.LatLng(${meeting.venue.lat}, ${meeting.venue.lon});\n  var mapOptions = {\n    center: myLatlng,\n    zoom: 15,\n    mapTypeId: google.maps.MapTypeId.ROADMAP\n  };\n  var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);\n  var marker = new google.maps.Marker({\n    position: myLatlng,\n    map: map,\n    title: "${meeting.venue.name}"\n  });\n  var infowindow = new google.maps.InfoWindow({\n    content: '<div>${meeting.venue.name}</div>'\n  });\n  google.maps.event.addListener(marker, 'click', function() {\n    infowindow.open(map, marker);\n  });\n}\ngoogle.maps.event.addDomListener(window, 'load', initialize);`;
+    mapsScript = `(function () {\n  function initialize() {\n    var myLatlng = new google.maps.LatLng(${meeting.venue.lat}, ${meeting.venue.lon});\n    var mapOptions = {\n      center: myLatlng,\n      zoom: 15,\n      mapTypeId: google.maps.MapTypeId.ROADMAP\n    };\n    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);\n    var marker = new google.maps.Marker({\n      position: myLatlng,\n      map: map,\n      title: "${meeting.venue.name}"\n    });\n    var infowindow = new google.maps.InfoWindow({\n      content: '<div>${meeting.venue.name}</div>'\n    });\n    google.maps.event.addListener(marker, 'click', function () {\n      infowindow.open(map, marker);\n    });\n  }\n  var tries = 0;\n  function waitForMaps() {\n    if (window.google && window.google.maps) {\n      initialize();\n      return;\n    }\n    if (tries < 100) {\n      tries += 1;\n      window.setTimeout(waitForMaps, 200);\n    }\n  }\n  waitForMaps();\n})();`;
   }
 
   const twitterWidgetsScript = `!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');`;
@@ -74,7 +75,7 @@ export default async function Home() {
           <p>Follow us on X or GitHub.</p>
           <div className="social-row">
             <a href="https://twitter.com/jaxnode" className="twitter-follow-button" data-show-count="false" data-size="large">Follow @jaxnode</a>
-            <a className="github-button" href="https://github.com/jaxnode" data-style="mega" data-count-href="/jaxnode/followers" data-count-api="/users/jaxnode#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @jaxnode on GitHub">Follow @jaxnode</a>
+            <a className="github-button" href="https://github.com/jaxnode" data-style="mega" data-count-href="/jaxnode/followers" data-count-api="/users/jaxnode#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @jaxnode on GitHub" suppressHydrationWarning>Follow @jaxnode</a>
           </div>
           <div className="store-badges">
             <a href="https://itunes.apple.com/us/app/jaxnode/id1183086193?ls=1&mt=8" target="_blank" rel="noopener" data-popup="true">
@@ -94,16 +95,16 @@ export default async function Home() {
       </aside>
 
       {displayMeetup && (
-        <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8" />
+        <Script id="twitter-widgets" src="https://platform.twitter.com/widgets.js" strategy="afterInteractive" />
       )}
       {displayMeetup && (
-        <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV9EuRsK_Eg7rzF-zA4ARVrNyPsfKOV_s&sensor=false" />
+        <Script id="maps-api" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV9EuRsK_Eg7rzF-zA4ARVrNyPsfKOV_s&sensor=false" strategy="afterInteractive" />
       )}
       {displayMeetup && displayMap && (
-        <script suppressHydrationWarning dangerouslySetInnerHTML={{ __html: mapsScript }} />
+        <Script id="maps-init" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: mapsScript }} />
       )}
-      <script suppressHydrationWarning dangerouslySetInnerHTML={{ __html: twitterWidgetsScript }} />
-      <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js" />
+      <Script id="twitter-follow" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: twitterWidgetsScript }} />
+      <Script id="github-bjs" src="https://buttons.github.io/buttons.js" strategy="afterInteractive" />
     </div>
   );
 }

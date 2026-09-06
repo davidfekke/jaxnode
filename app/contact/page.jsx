@@ -1,3 +1,5 @@
+import Script from 'next/script';
+
 export const metadata = {
   title: 'Contact the Jax Node User Group'
 };
@@ -22,11 +24,11 @@ export default function Contact() {
         </div>
         <div className="social-row">
           <a href="https://twitter.com/jaxnode" className="twitter-follow-button" data-show-count="false" data-size="large">Follow @jaxnode</a>
-          <a className="github-button" href="https://github.com/jaxnode" data-style="mega" data-count-href="/jaxnode/followers" data-count-api="/users/jaxnode#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @jaxnode on GitHub">Follow @jaxnode</a>
+          <a className="github-button" href="https://github.com/jaxnode" data-style="mega" data-count-href="/jaxnode/followers" data-count-api="/users/jaxnode#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @jaxnode on GitHub" suppressHydrationWarning>Follow @jaxnode</a>
         </div>
       </section>
-      <script suppressHydrationWarning dangerouslySetInnerHTML={{ __html: twitterWidgetsScript }} />
-      <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js" />
+      <Script id="twitter-follow" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: twitterWidgetsScript }} />
+      <Script id="github-bjs" src="https://buttons.github.io/buttons.js" strategy="afterInteractive" />
     </>
   );
 }
