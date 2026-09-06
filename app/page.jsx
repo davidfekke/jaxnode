@@ -1,5 +1,7 @@
 import Script from 'next/script';
+import XFeed from '../components/XFeed';
 import { getNextMeetup } from '../lib/meetupdata';
+import { getJaxnodePosts } from '../lib/xdata';
 
 export const metadata = {
   title: 'JaxNode User Group'
@@ -7,6 +9,7 @@ export const metadata = {
 
 export default async function Home() {
   const meeting = await getNextMeetup();
+  const posts = await getJaxnodePosts();
   const displayMeetup = meeting !== undefined && Object.keys(meeting).length !== 0;
   let displayMap = false;
   if (displayMeetup && Object.prototype.hasOwnProperty.call(meeting, 'venue')) {
@@ -17,8 +20,6 @@ export default async function Home() {
   if (displayMap) {
     mapsScript = `(function () {\n  function initialize() {\n    var myLatlng = new google.maps.LatLng(${meeting.venue.lat}, ${meeting.venue.lon});\n    var mapOptions = {\n      center: myLatlng,\n      zoom: 15,\n      mapTypeId: google.maps.MapTypeId.ROADMAP\n    };\n    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);\n    var marker = new google.maps.Marker({\n      position: myLatlng,\n      map: map,\n      title: "${meeting.venue.name}"\n    });\n    var infowindow = new google.maps.InfoWindow({\n      content: '<div>${meeting.venue.name}</div>'\n    });\n    google.maps.event.addListener(marker, 'click', function () {\n      infowindow.open(map, marker);\n    });\n  }\n  var tries = 0;\n  function waitForMaps() {\n    if (window.google && window.google.maps) {\n      initialize();\n      return;\n    }\n    if (tries < 100) {\n      tries += 1;\n      window.setTimeout(waitForMaps, 200);\n    }\n  }\n  waitForMaps();\n})();`;
   }
-
-  const twitterWidgetsScript = `!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');`;
 
   return (
     <div className="home-grid">
@@ -74,7 +75,7 @@ export default async function Home() {
 
           <p>Follow us on X or GitHub.</p>
           <div className="social-row">
-            <a href="https://twitter.com/jaxnode" className="twitter-follow-button" data-show-count="false" data-size="large">Follow @jaxnode</a>
+            <a href="https://x.com/jaxnode" className="btn btn--ghost" target="_blank" rel="noopener">Follow @jaxnode</a>
             <a className="github-button" href="https://github.com/jaxnode" data-style="mega" data-count-href="/jaxnode/followers" data-count-api="/users/jaxnode#followers" data-count-aria-label="# followers on GitHub" aria-label="Follow @jaxnode on GitHub" suppressHydrationWarning>Follow @jaxnode</a>
           </div>
           <div className="store-badges">
@@ -90,20 +91,14 @@ export default async function Home() {
         </section>
       </div>
 
-      <aside className="card twitter-panel">
-        <a className="twitter-timeline" href="https://twitter.com/jaxnode?ref_src=twsrc%5Etfw">Tweets by jaxnode</a>
-      </aside>
+      <XFeed posts={posts} />
 
-      {displayMeetup && (
-        <Script id="twitter-widgets" src="https://platform.twitter.com/widgets.js" strategy="afterInteractive" />
-      )}
       {displayMeetup && (
         <Script id="maps-api" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV9EuRsK_Eg7rzF-zA4ARVrNyPsfKOV_s&sensor=false" strategy="afterInteractive" />
       )}
       {displayMeetup && displayMap && (
         <Script id="maps-init" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: mapsScript }} />
       )}
-      <Script id="twitter-follow" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: twitterWidgetsScript }} />
       <Script id="github-bjs" src="https://buttons.github.io/buttons.js" strategy="afterInteractive" />
     </div>
   );

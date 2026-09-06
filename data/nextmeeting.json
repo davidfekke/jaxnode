@@ -1,9 +1,9 @@
 [
     {
-        "id": "314519802",
-        "name": "JaxNode July Meetup: Vue.js, Nuxt, Vite and Micro Frontends",
-        "time": "Wednesday, July 23, 2026",
-        "event_url": "https://www.meetup.com/jax-node-js-ug/events/315489003/",
-        "description": "We will be presenting on Vue.js, Nuxt and Vite in July's meeting. Vue.js is a frontend framework for adding dynamic UIs to static web pages. We will also cover Nuxt and Vite as well since Nuxt is the server side version of Vue. Vue components can also be used in micro-frontends, so we will laos be covering how to use Vue using module federation. We will also be providing food for this meeting."
+        "id": "316034901",
+        "name": "MLX-Serve",
+        "time": "Thursday, September 24th 2026, 6:30 PM to 8:30 PM",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/316384558/",
+        "description": "David Dalcu will be presenting on an extremely cool Open Source project he started called MLX-Serve. MLX-Serve is software you can use to run LLMs on your Mac using MLX and metal to accelerate your performance. MLX-Serve and MLX-Core can be used for not only running LLMs locally, but for creating and running AI Agents. MLX-Serve is written in Zig, and David will also talk about why he chose Zig over other system programming languages. You won't want to miss this presentation."
     }
 ]
