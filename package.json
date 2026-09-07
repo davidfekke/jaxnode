@@ -2,48 +2,25 @@
   "name": "jaxnode",
   "version": "3.2.2",
   "private": true,
-  "main": "./bin/www",
   "scripts": {
-    "start": "node ./bin/www",
-    "dev": "node ./bin/www -w",
-    "test": "jest"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "npm run build && node --test test/"
   },
   "dependencies": {
-    "@mux/mux-player": "^2.8.0",
-    "async": "^1.5.1",
-    "axios": "^1.11.0",
-  "cookie-parser": "^1.4.7",
-    "debug": "~2.6.9",
-    "dotenv": "^16.0.2",
-    "express": "^5.0.1",
-    "express-hbs": "^2.3.4",
     "memory-cache": "^0.1.4",
-    "moment-timezone": "^0.5.23",
-  "morgan": "^1.10.0",
-    "node-fetch": "^2.6.1",
-    "serve-favicon": "^2.5.0",
-    "twitter-api-v2": "^1.18.0"
+    "next": "16.3.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-  "chai": "^3.4.1",
-  "jest": "^29.0.3",
-  "nodemon": "^3.1.10",
-  "sinon": "^1.17.2",
-  "supertest": "^7.1.4"
+    "eslint": "^9.0.0",
+    "eslint-config-next": "16.3.4"
   },
   "engines": {
-    "node": "20.10.0"
-  },
-  "overrides": {
-  "on-headers": "1.1.0",
-  "micromatch": "^4.0.8",
-  "cross-spawn": "^7.0.6",
-    "@babel/helpers": "^7.28.2",
-    "brace-expansion": {
-      "minimatch@3.1.2": "1.1.12",
-      "minimatch@9.0.1": "2.0.2",
-      "minimatch@9.0.5": "2.0.2"
-    }
+    "node": ">=20.9.0"
   },
   "license": "Apache-2.0"
 }
