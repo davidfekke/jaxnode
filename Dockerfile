@@ -1,21 +1,23 @@
-FROM node:20-alpine AS deps
+FROM docker.io/library/node:22-alpine AS base
 WORKDIR /src
+ENV NEXT_TELEMETRY_DISABLED=1
+
+FROM base AS deps
 COPY package.json package-lock.json ./
 RUN npm ci
 
-FROM node:20-alpine AS builder
-WORKDIR /src
+FROM base AS builder
 COPY --from=deps /src/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
-FROM node:20-alpine AS runner
-WORKDIR /src
+FROM base AS runner
 ENV NODE_ENV=production
-COPY --from=deps /src/node_modules ./node_modules
-COPY --from=builder /src/.next ./.next
-COPY package.json ./
-COPY public ./public
-COPY data ./data
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
+COPY --from=builder --chown=node:node /src/.next/standalone ./
+COPY --from=builder --chown=node:node /src/.next/static ./.next/static
+COPY --from=builder --chown=node:node /src/public ./public
+USER node
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["node", "server.js"]
