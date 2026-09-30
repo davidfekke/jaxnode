@@ -1,9 +1,9 @@
 [
     {
-        "id": "316384558",
-        "name": "MLX-Serve",
-        "time": "Thursday, September 24, 2026",
-        "event_url": "https://www.meetup.com/jax-node-js-ug/events/316384558/",
-        "description": "David Dalcu will be presenting on an extremely cool Open Source project he started called MLX-Serve. MLX-Serve is software you can use to run LLMs on your Mac using MLX and metal to accelerate your performance.\n\nMLX-Serve and MLX-Core can be used for not only running LLMs locally, but for creating and running AI Agents.\n\nMLX-Serve is written in Zig, and David will also talk about why he chose Zig over other system programming languages. You won't want to miss this presentation."
+        "id": "316780088",
+        "name": "OpenCode",
+        "time": "Thursday, October 22, 2026",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/316780088/",
+        "description": "Jitesh Doshi will be presenting on how to use and extend Opencode for agentic coding."
     }
 ]
