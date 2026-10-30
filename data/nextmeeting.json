@@ -1,9 +1,9 @@
 [
     {
-        "id": "316780088",
-        "name": "OpenCode",
-        "time": "Thursday, October 22, 2026",
-        "event_url": "https://www.meetup.com/jax-node-js-ug/events/316780088/",
-        "description": "Jitesh Doshi will be presenting on how to use and extend Opencode for agentic coding."
+        "id": "317198575",
+        "name": "JaxRust Study Group",
+        "time": "Wednesday, November 4, 2026",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/317198575/",
+        "description": "A bunch of us are currently learning Rust. If you are not familiar with Rust, it is a language developed by Mozila. Rust was developed to be a statically typed general purpose language for performance, memory safety and concurrency."
     }
 ]
