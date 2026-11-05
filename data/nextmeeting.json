@@ -1,18 +1,9 @@
 [
     {
-        "id": "277961668",
-        "name": "Node.js version 16",
-        "time": "Thursday, April 15, 2021",
-        "event_url": "https://www.meetup.com/Jax-Node-js-UG/events/277961668/",
-        "description": "David Fekke will be presenting on Node.js v16, the latest version of Node.js. This presentation will cover modern JavaScript, and how we should use the language going forward using some of the newer features and best practices.",
-        "venue": {
-                "name": "Online",
-                "address_1": "Details on meetup.com",
-                "city": "Jacksonville",
-                "state": "Fl",
-                "zip": "32256",
-                "lat": "30.2480234",
-                "lon": "-81.524463"
-        }
+        "id": "317299367",
+        "name": "JaxRust Study Group, Week 2",
+        "time": "Wednesday, November 11, 2026",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/317299367/",
+        "description": "A bunch of us are currently learning Rust. If you are not familiar with Rust, it is a language developed by Mozila. Rust was developed to be a statically typed general purpose language for performance, memory safety and concurrency.\n\nWe will be going over ownership in Rust and borrowing in week 2."
     }
 ]
