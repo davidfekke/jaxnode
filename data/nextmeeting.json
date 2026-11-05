@@ -1,9 +1,9 @@
 [
     {
-        "id": "317198575",
-        "name": "JaxRust Study Group",
-        "time": "Wednesday, November 4, 2026",
-        "event_url": "https://www.meetup.com/jax-node-js-ug/events/317198575/",
-        "description": "A bunch of us are currently learning Rust. If you are not familiar with Rust, it is a language developed by Mozila. Rust was developed to be a statically typed general purpose language for performance, memory safety and concurrency."
+        "id": "317299367",
+        "name": "JaxRust Study Group, Week 2",
+        "time": "Wednesday, November 11, 2026",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/317299367/",
+        "description": "A bunch of us are currently learning Rust. If you are not familiar with Rust, it is a language developed by Mozila. Rust was developed to be a statically typed general purpose language for performance, memory safety and concurrency.\n\nWe will be going over ownership in Rust and borrowing in week 2."
     }
 ]
