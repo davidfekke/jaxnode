@@ -1,0 +1,18 @@
+[
+    {
+        "id": "277961668",
+        "name": "Langchain JavaScript",
+        "time": "Wednesday, February 21, 2024",
+        "event_url": "https://www.meetup.com/jax-node-js-ug/events/297380440/",
+        "description": "February's JaxNode meetup will cover how to build AI apps with Node.js and Langchain. Langchain is a popular framework for building AI apps for large language models like OpenAI's GPT, but it can be used with others including open source alternatives. This presentation will cover vector databases, embeddings and using your data and functions to build state of the art AI apps.",
+        "venue": {
+                "name": "Availity",
+                "address_1": "5555 Gate Pkwy #110",
+                "city": "Jacksonville",
+                "state": "Fl",
+                "zip": "32256",
+                "lat": "30.2480234",
+                "lon": "-81.524463"
+        }
+    }
+]
